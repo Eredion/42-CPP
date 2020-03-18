@@ -2,6 +2,8 @@
 # define FRAGTRAP_HPP
 
 #include <iostream>
+#include <cmath>
+#include <stdlib.h>
 
 class FragTrap
 {
