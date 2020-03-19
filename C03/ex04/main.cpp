@@ -2,6 +2,7 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int		main(void)
 {
@@ -46,4 +47,21 @@ int		main(void)
 	n.NinjaShoebox(c);
 	n.NinjaShoebox(a);
 	n.NinjaShoebox(b);
+
+	std::cout << "\n Final test: SuperTrap\n";
+	SuperTrap	s("SUPER");
+
+	s.rangedAtack("Marvin");
+	s.meleeAtack("Abascal");
+	s.takeDamage(104);
+	s.beRepaired(200);
+	s.vaulthunter_dot_exe("Coronavirus");
+	s.vaulthunter_dot_exe("Dios");
+	s.vaulthunter_dot_exe("itself");
+	s.vaulthunter_dot_exe("you");
+	s.vaulthunter_dot_exe("nobody");
+	s.NinjaShoebox(n);
+	s.NinjaShoebox(c);
+	s.NinjaShoebox(a);
+	s.NinjaShoebox(b);
 }
