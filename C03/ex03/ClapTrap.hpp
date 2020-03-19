@@ -1,13 +1,13 @@
-#ifndef SCRAVTRAP_HPP
-# define SCRAVTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 #include <iostream>
 #include <cmath>
 #include <stdlib.h>
 
-class ScavTrap
+class ClapTrap
 {
-	private:
+	protected:
 	std::string	Name;
 	int			Hit_points;
 	int			Max_hit_points;
@@ -18,15 +18,14 @@ class ScavTrap
 	int			Ranged_dmg;
 	int			Armor;
 	public:
-	ScavTrap(std::string str);
-	~ScavTrap();
-	ScavTrap();
-	ScavTrap  &operator=(ScavTrap const &copy);
+	ClapTrap(std::string str);
+	~ClapTrap();
+	ClapTrap();
+	ClapTrap  &operator=(ClapTrap const &copy);
 	void	rangedAtack(std::string const &target);
 	void	meleeAtack(std::string const &target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
-	void 	challengerNewcomer();
 };
 
 #endif

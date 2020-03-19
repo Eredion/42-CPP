@@ -14,22 +14,41 @@ ScavTrap::~ScavTrap()
 	std::cout << "* " << this->Name << " killed itself *\n";
 }
 
+ScavTrap::ScavTrap()
+{
+	return ;
+}
+
+ScavTrap &ScavTrap::operator= (ScavTrap const &copy)
+{
+	this->Name = copy.Name;
+	this->Hit_points = copy.Hit_points;
+	this->Max_hit_points = copy.Max_hit_points;
+	this->Energy_points = copy.Energy_points;
+	this->Max_energy_points = copy.Max_energy_points;
+	this->Level = copy.Level;
+	this->Melee_dmg = copy.Melee_dmg;
+	this->Ranged_dmg = copy.Ranged_dmg;
+	this->Armor = copy.Armor;
+    return (*this);
+}
+
 void	ScavTrap::rangedAtack(std::string const &target)
 {
-	std::cout<<"FR4G-TP " << this->Name << " attacks " << target;
+	std::cout<<"SCV-TP " << this->Name << " attacks " << target;
 	std::cout<<" at range, causing "<<this->Ranged_dmg<<" points of damage!"<<std::endl;
 }
 
 void	ScavTrap::meleeAtack(std::string const &target)
 {
-	std::cout<<"FR4G-TP " << this->Name << " hits " << target << " at melee range";
+	std::cout<<"SCV-TP " << this->Name << " hits " << target << " at melee range";
 	std::cout<<", causing "<<this->Melee_dmg<<" points of damage!"<<std::endl;
 }
 
 void	ScavTrap::takeDamage(unsigned int ammount)
 {
 	int dmg = (ammount - this->Armor) > 0 ? ammount - this->Armor : 0;
-	std::cout<<"FR4G-TP " << this->Name << " gets a " << ammount << " damage hit. ";
+	std::cout<<"SCV-TP " << this->Name << " gets a " << ammount << " damage hit. ";
 	std::cout<<"Thanks to his armor, he recieves "<<(dmg * this->Level);
 	this->Hit_points = this->Hit_points - dmg < 0 ? 0 : this->Hit_points - dmg;
 	std::cout<<" points of damage.\nCurrent hit points: "<<this->Hit_points<<std::endl;
@@ -39,7 +58,7 @@ void	ScavTrap::beRepaired(unsigned int ammount)
 {
 	this->Hit_points += ammount;
 	this->Hit_points = this->Hit_points > this->Max_hit_points ? 100 : 0;
-	std::cout<<"FR4G-TP " << this->Name << " is repaired, healing " << ammount;
+	std::cout<<"SCV-TP " << this->Name << " is repaired, healing " << ammount;
 	std::cout<<" points of damage.\nCurrent hit points: "<<this->Hit_points<<std::endl;
 }
 
@@ -52,5 +71,5 @@ void 	ScavTrap::challengerNewcomer()
 		" tell a joke (funny, please) ", "dance La Macarena "};
 	srand (time(NULL) * this->Name.length());
 	int			n = rand() % 5;
-	std::cout<<"FR4G-TP " << this->Name << "challenges you to" << action[n] <<std::endl;;
+	std::cout<<"SCV-TP " << this->Name << "challenges you to" << action[n] <<std::endl;;
 }

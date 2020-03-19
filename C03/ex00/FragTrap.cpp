@@ -10,6 +10,25 @@ FragTrap::FragTrap(std::string str):
 	std::cout << "or had existed in the first place!\n\n";
 }
 
+FragTrap::FragTrap()
+{
+	return ;
+}
+
+FragTrap &FragTrap::operator= (FragTrap const &copy)
+{
+	this->Name = copy.Name;
+	this->Hit_points = copy.Hit_points;
+	this->Max_hit_points = copy.Max_hit_points;
+	this->Energy_points = copy.Energy_points;
+	this->Max_energy_points = copy.Max_energy_points;
+	this->Level = copy.Level;
+	this->Melee_dmg = copy.Melee_dmg;
+	this->Ranged_dmg = copy.Ranged_dmg;
+	this->Armor = copy.Armor;
+    return (*this);
+}
+
 FragTrap::~FragTrap()
 {
 	std::cout << "OH NO! My only weakness.... STAIRS!!!" << std::endl;

@@ -20,6 +20,8 @@ class FragTrap
 	public:
 	FragTrap(std::string str);
 	~FragTrap();
+	FragTrap();
+	FragTrap  &operator=(FragTrap const &copy);
 	void	rangedAtack(std::string const &target);
 	void	meleeAtack(std::string const &target);
 	void	takeDamage(unsigned int amount);
