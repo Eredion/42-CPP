@@ -1,4 +1,4 @@
-#include "Bureaucrat.hpp"
+# include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(std::string const name, int rank): Name(name)
 {
@@ -56,16 +56,32 @@ void	Bureaucrat::decRank()
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "Error: Grade too High";
+	return "Bureaucrat Error: Grade too High";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "Error: Grade too Low";
+	return "Bureaucrat Error: Grade too Low";
 }
 
 std::ostream	&operator << (std::ostream &out, const Bureaucrat &bur)
 {
 	out<<bur.getName()<<", bureucrat grade "<<bur.getRank();
 	return (out);
+}
+
+void	Bureaucrat::signForm(Form &form)
+{
+	if(this->getRank() > form.getRank_s())
+	{
+		std::cout<<"Bureaucrat "<<this->getName()<<" cannot sign form "<<
+		form.getName()<<" because form is "<<this->getRank() - form.getRank_s()
+		<<" grades higher\n";
+	}
+	else
+	{
+		std::cout<<"Bureaucrat "<<this->getName()<<" signs form "
+		<<form.getName()<<std::endl;
+		form.beSigned(*this);
+	}
 }
