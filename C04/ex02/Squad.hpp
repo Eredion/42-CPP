@@ -14,7 +14,7 @@ public:
 	virtual ~Squad();
 	Squad &operator=(Squad const &copy);
 	int getCount(void) const;
-	ISpaceMarine *getUnit(int index) const;
+	ISpaceMarine *getUnit(int i) const;
 	int push(ISpaceMarine *unit);
 };
 
