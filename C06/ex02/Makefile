@@ -29,5 +29,6 @@ test:	$(NAME)
 	@echo Compiling and testing $(NAME)...
 	@echo
 	@./$(NAME)
+	@rm -f $(NAME) a.out
 
 .PHONY: all clean fclean re test
