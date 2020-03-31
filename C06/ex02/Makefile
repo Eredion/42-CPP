@@ -1,6 +1,6 @@
-NAME = base
+NAME = a.out
 
-SRCS = main.cpp
+SRCS = main.cpp whatever.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

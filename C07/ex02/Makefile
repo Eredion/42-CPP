@@ -1,4 +1,4 @@
-NAME = base
+NAME = a.out
 
 SRCS = main.cpp
 
