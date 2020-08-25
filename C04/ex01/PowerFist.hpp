@@ -7,7 +7,7 @@ class PowerFist: public AWeapon
 {
 	public:
 	PowerFist();
-	~PowerFist();
+	virtual ~PowerFist();
 	PowerFist &operator = (const PowerFist &copy);
 	PowerFist (const PowerFist &copy);
 };

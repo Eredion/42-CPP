@@ -10,7 +10,7 @@ class Victim
 	public:
 	Victim(std::string const &name);
 	Victim();
-	~Victim();
+	virtual ~Victim();
 	Victim &operator = (Victim const &copy);
 	const 	std::string getName() const;
 	void	getPolymorphed() const;

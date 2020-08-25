@@ -11,7 +11,7 @@ class Peon: public Victim
 	public:
 	Peon(std::string const &name);
 	Peon();
-	~Peon();
+	virtual ~Peon();
 	void	getPolymorphed() const;
 };
 

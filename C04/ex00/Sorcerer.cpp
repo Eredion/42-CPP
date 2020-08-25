@@ -8,13 +8,6 @@ Sorcerer::Sorcerer(std::string const &name, std::string const &title)
 	std::cout << name << ", " << title << " is born!\n";
 }
 
-Sorcerer::Sorcerer()
-{
-	this->Name = "Gandalf";
-	this->Title = "el Blanco";
-	return ;
-}
-
 Sorcerer::~Sorcerer()
 {
 	std::cout << this->Name << ", " << this->Title << " is dead. ";

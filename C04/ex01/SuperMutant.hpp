@@ -7,9 +7,11 @@ class SuperMutant: public Enemy
 {
 	public:
 	SuperMutant();
-	~SuperMutant();
+	virtual ~SuperMutant();
 	SuperMutant &operator = (const SuperMutant &copy);
 	SuperMutant (const SuperMutant &copy);
+
+	void	takeDamage(int dmg);
 };
 
 #endif

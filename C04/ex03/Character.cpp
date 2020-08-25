@@ -6,8 +6,10 @@ Character::Character(std::string const &name)
 	this->Count = 0;
 }
 
-Character::Character(): Character("unnamed")
+Character::Character()
 {
+	this->Name = "unnamed";
+	this->Count = 0;
 }
 
 Character::Character(Character const &copy)
@@ -72,4 +74,3 @@ void	Character::use(int idx, ICharacter &target)
 	if (idx > -1 && idx < this->getCount())
 		this->inventory[idx]->use(target);
 }
-

@@ -5,6 +5,8 @@
 #include "PlasmaRifle.hpp"
 #include "PowerFist.hpp"
 #include "SuperMutant.hpp"
+#include "Monster.hpp"
+#include "DeathStar.hpp"
 
 int		main(void)
 {
@@ -24,5 +26,17 @@ int		main(void)
 	std::cout << *me;
 	me->attack(b);
 	std::cout << *me;
+
+	std::cout<< "\nMore tests\n";
+	Enemy* c = new SuperMutant();
+	AWeapon *testw = new DeathStar();
+	std::cout << "Super mutant HP = " << c->getHp() << std::endl;
+	me->attack(c);
+	std::cout << "Super mutant HP = " << c->getHp() << std::endl;
+	Enemy* d = new Monster();
+	me->equip(testw);
+	std::cout << *me;
+	me->attack(d);
+	
 	return 0;
 }

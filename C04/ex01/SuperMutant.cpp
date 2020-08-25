@@ -23,3 +23,9 @@ SuperMutant &SuperMutant::operator = (const SuperMutant &copy)
 	this->Type = copy.Type;
 	return (*this);
 }
+
+void	SuperMutant::takeDamage(int dmg)
+{
+	dmg -= 3;
+	Enemy::takeDamage(dmg);
+}

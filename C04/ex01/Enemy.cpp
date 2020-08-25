@@ -46,4 +46,3 @@ void	Enemy::takeDamage(int dmg)
 	if (this->Hp < 1)
 		this->Hp = 0;
 }
-
